@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Meta SEO cavernícola pero funcional -->
+  <!-- Meta SEO: mundo ferroviario cavernícola -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Aficiorriarios: tribu de aficionados fuertes. Compartir pasiones. Ver galería. Unirse comunidad.">
-  <meta name="keywords" content="aficionados, comunidad, galería, hobbies, tribu, aficiorriarios">
-  <meta name="author" content="Aficiorriarios">
-  <meta property="og:title" content="Aficiorriarios - Tribu de Apasionados">
-  <meta property="og:description" content="Compartir pasiones. Ver galería. Unirse comunidad fuerte.">
+  <meta name="description" content="Aficiorriarios: tribu de amantes del ferrocarril. Ver locomotoras. Compartir rutas. Unirse comunidad ferroviaria fuerte.">
+  <meta name="keywords" content="ferrocarril, tren, locomotoras, aficionados, ferroviario, maquetas, estaciones, aficiorriarios">
+  <meta name="author" content="Aficiorriarios Ferroviarios">
+  <meta property="og:title" content="Aficiorriarios — Tribu Ferroviaria">
+  <meta property="og:description" content="Amar trenes. Compartir rutas. Conocer tribu locomotora.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aficiorriarios.com">
-  <title>Aficiorriarios - Tribu de Apasionados</title>
+  <title>Aficiorriarios — Tribu Ferroviaria</title>
 
-  <!-- Google Fonts: Zilla Slab (display robusto) + Source Serif 4 (cuerpo legible) -->
+  <!-- Google Fonts: carga rápida con display=swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="estilos/style.css">
+
+  <!-- Hoja de estilos separada -->
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-  <!-- ════════════════════════════════
-       CABECERA: Barra navegación
-       ════════════════════════════════ -->
+
+  <!-- ════════════════════════════════════
+       CABECERA: navegación principal
+       ════════════════════════════════════ -->
   <header class="cabecera" role="banner">
     <div class="cab-interior">
 
-      <!-- Logo -->
-      <a href="/" class="logo" aria-label="Aficiorriarios - Ir al inicio">
+      <!-- Logo: placa de locomotora -->
+      <a href="/" class="logo" aria-label="Aficiorriarios Ferroviarios - Ir al inicio">
         Aficior<span>riarios</span>
       </a>
 
-      <!-- Navegación escritorio (aria-label obligatorio WCAG) -->
+      <!-- Navegación escritorio -->
       <nav class="nav-escritorio" aria-label="Navegación principal">
         <ul class="nav-links" role="list">
           <li><a href="#inicio"      aria-current="page">Inicio</a></li>
           <li><a href="#categorias">Categorías</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#galeria">Galería</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
 
-      <!-- Hamburguesa: solo visible en tablet/móvil -->
+      <!-- Botón hamburguesa: visible solo en móvil/tablet -->
       <button
         class="btn-menu"
         id="btnMenu"
@@ -56,7 +59,7 @@
       </button>
     </div>
 
-    <!-- Menú móvil desplegable -->
+    <!-- Menú desplegable móvil -->
     <nav
       class="nav-movil"
       id="navMovil"
@@ -71,46 +74,64 @@
     </nav>
   </header>
 
-  <!-- ════════════════════════════════
-       HERO: H1 + imagen Zurich
-       ════════════════════════════════ -->
+  <!-- ════════════════════════════════════
+       HERO: H1 principal + imagen Zurich
+       ════════════════════════════════════ -->
   <section class="hero" id="inicio" aria-label="Portada principal">
     <div class="hero-contenido">
-      <h1>Tribu <em>unir</em>. Pasión <em>compartir</em>. Mundo <em>conquistar</em>.</h1>
+      <!-- H1: resumen temático ferroviario cavernícola -->
+      <h1>
+        Raíl <em>vibrar</em>. Vapor <em>rugir</em>.<br>
+        Tribu ferroviaria <em>avanzar</em>.
+      </h1>
       <p>
-        Aficiorriarios: comunidad fuerte de aficionados. Mostrar colecciones. Conocer tribus. Vivir pasión grande.
+        Aficiorriarios: comunidad de amantes del tren. Compartir locomotoras. Descubrir rutas históricas. Mostrar maquetas. Reunir tribu de hierro y vapor.
       </p>
-      <a href="#galeria" class="hero-cta" aria-label="Ver galería de Aficiorriarios">
-        Ver galería →
+      <a href="#galeria" class="hero-cta" aria-label="Ver galería ferroviaria">
+        Ver galería ferroviaria →
       </a>
     </div>
   </section>
 
-  <!-- ════════════════════════════════
-       MAIN: Contenido
-       ════════════════════════════════ -->
+  <!-- ════════════════════════════════════
+       MAIN: contenido principal
+       ════════════════════════════════════ -->
   <main id="contenido-principal">
 
-    <!-- Dos párrafos lado a lado (flex) -->
-    <section class="dos-columnas" id="nosotros" aria-labelledby="titulo-nosotros">
-
-      <article class="columna" data-icono="🪨" aria-labelledby="titulo-ser">
-        <h2 id="titulo-ser">Ser Aficiorriario</h2>
+    <!-- Dos columnas flex: párrafos temáticos ferroviarios -->
+    <section
+      class="dos-columnas"
+      id="nosotros"
+      aria-labelledby="titulo-nosotros"
+    >
+      <!-- Columna 1: ser ferroviario -->
+      <article
+        class="columna"
+        data-icono="🚂"
+        aria-labelledby="titulo-ser"
+        id="categorias"
+      >
+        <h2 id="titulo-ser">Ser Ferroviario</h2>
         <p>
-          Aficiorriario no ser normal. Aficiorriario sentir fuego adentro. Despertar mañana querer hacer cosa favorita. No dormir pensando en colección. Correr hacia hobby. Nunca parar. Tribu entender eso. Tribu no juzgar. Tribu aplaudir con palo en cueva.
+          Ferroviario no nacer. Ferroviario hacerse. Escuchar silbato de tren lejos. Sentir vibrar suelo cuando locomotora pasar. Corazón latir más fuerte. Eso ser señal. Eso ser llamada del raíl.
         </p>
         <p>
-          Unirse aquí ser correcto. Mostrar pasión sin miedo. Enseñar colección pequeña o grande. Aprender de otros. Crecer junto. Fuego no apagar nunca.
+          Aficiorriario ferroviario coleccionar billetes viejos. Fotografiar estaciones olvidadas. Construir maqueta con mano sucia de pintura. Leer horarios de 1920. Soñar con rutas que ya no existir.
         </p>
       </article>
 
-      <article class="columna" data-icono="🌿" aria-labelledby="titulo-hacer">
-        <h2 id="titulo-hacer">Qué Hacer Aquí</h2>
+      <!-- Columna 2: qué hacer en la comunidad -->
+      <article
+        class="columna"
+        data-icono="🛤️"
+        aria-labelledby="titulo-hacer"
+      >
+        <h2 id="titulo-hacer">Explorar Tribu</h2>
         <p>
-          Explorar categorías grandes. Encontrar tribu propia. Compartir foto. Escribir historia. Comentar trabajo de otro. Votar mejor colección. Participar en reto mensual. Ganar piedra honor.
+          Aquí subir foto de locomotora favorita. Compartir ruta de tren histórico. Presentar maqueta construida con paciencia. Preguntar sobre vagón misterioso. Tribu saber respuesta.
         </p>
         <p>
-          Subir imagen propia. Describir con palabras simples. Otras cuevas del mundo ver trabajo. Apreciar esfuerzo. Dar fuerza con corazón. Comunidad crecer día con día. Todos bienvenidos. Todos iguales aquí.
+          Participar en reto mensual: fotografiar estación abandonada. Reconstruir maqueta escala H0. Identificar modelo de vagón antiguo. Ganar placa de honor: insignia de maquinista veterano.
         </p>
       </article>
     </section>
@@ -118,68 +139,75 @@
     <!-- ════════════════════
          GALERÍA: Carrusel
          ════════════════════ -->
-    <section class="galeria-seccion" id="galeria" aria-labelledby="titulo-galeria">
-      <h2 id="titulo-galeria">Galería de la Tribu</h2>
+    <section
+      class="galeria-seccion"
+      id="galeria"
+      aria-labelledby="titulo-galeria"
+    >
+      <h2 id="titulo-galeria">Galería Ferroviaria</h2>
 
-      <!-- Carrusel accesible con role=region -->
+      <!-- Carrusel accesible -->
       <div
         class="carrusel"
         role="region"
-        aria-label="Carrusel de imágenes de la galería"
+        aria-label="Carrusel de imágenes ferroviarias"
         aria-live="polite"
       >
-        <!-- Pista deslizante: contiene slides -->
+        <!-- Pista deslizante: 4 slides ferroviarios -->
         <div class="carrusel-pista" id="carruselPista">
 
+          <!-- Slide 1 -->
           <div class="slide" role="group" aria-label="Imagen 1 de 4">
-            <!-- Imagen 1: usar imagen real o placeholder descriptivo -->
-            <!-- <img
-              src="https://picsum.photos/seed/zurich1/900/480"
-              alt="Paisaje urbano de Zúrich con lago al fondo y montañas nevadas"
-              loading="lazy"
-            > -->
-            <img src="imagenes/imagen1.jpg" alt="Un tren de alta velocidad en una estación en japon">
-            <div class="slide-caption">Zúrich: lago brillar como oro</div>
+            <img
+              src="imagenes/imagen1.jpg"
+              alt="Locomotora de vapor histórica avanzando entre campos con humo blanco"
+              loading="eager"
+            >
+            <div class="slide-caption">Locomotora de vapor: reina del raíl</div>
           </div>
 
+          <!-- Slide 2 -->
           <div class="slide" role="group" aria-label="Imagen 2 de 4">
-            <!-- <img
-              src="https://picsum.photos/seed/bosque2/900/480"
-              alt="Bosque denso con rayos de luz entre árboles altos"
+            <img
+              src="imagenes/imagen2.jpg"
+              alt="Estación ferroviaria antigua con andén de piedra y reloj de hierro"
               loading="lazy"
-            > -->
-            <img src="imagenes/imagen2.jpg" alt="Tranvia moderno cruzando al lado de un parque boscozo">
-            <div class="slide-caption">Bosque hablar en silencio</div>
+            >
+            <div class="slide-caption">Estación antigua: tiempo congelado en piedra</div>
           </div>
 
+          <!-- Slide 3 -->
           <div class="slide" role="group" aria-label="Imagen 3 de 4">
-            <!-- <img
-              src="https://picsum.photos/seed/coleccion3/900/480"
-              alt="Colección de objetos artesanales sobre mesa de madera"
+            <img
+              src="imagenes/imagen3.jpg"
+              alt="Maqueta ferroviaria en escala H0 con paisaje de montaña y túnel"
               loading="lazy"
-            > -->
-            <img src="imagenes/imagen3.jpg" alt="Un tren de alta velocidad, pasando por los alpes suizos">
-            <div class="slide-caption">Manos crear cosas hermosas</div>
+            >
+            <div class="slide-caption">Maqueta H0: construir mundo en miniatura</div>
           </div>
 
+          <!-- Slide 4 -->
           <div class="slide" role="group" aria-label="Imagen 4 de 4">
-            <!-- <img
-              src="https://picsum.photos/seed/tribu4/900/480"
-              alt="Grupo de personas reunidas celebrando afición compartida"
+            <img
+              src="imagenes/imagen4.jpg"
+              alt="Raíles ferroviarios en perspectiva al atardecer con luz dorada"
               loading="lazy"
-            > -->
-            <img src="imagenes/imagen4.jpg" alt="Dos trenes de alta velocidad en una estación">
-            <div class="slide-caption">Tribu unida nunca vencer</div>
+            >
+            <div class="slide-caption">Raíles al horizonte: camino nunca terminar</div>
           </div>
         </div>
 
-        <!-- Botones navegación manual -->
+        <!-- Botones de navegación manual -->
         <button class="carrusel-btn prev" id="btnPrev" aria-label="Imagen anterior">&#8592;</button>
         <button class="carrusel-btn next" id="btnNext" aria-label="Imagen siguiente">&#8594;</button>
       </div>
 
-      <!-- Indicadores de slide activo -->
-      <div class="carrusel-puntos" role="tablist" aria-label="Seleccionar imagen">
+      <!-- Puntos indicadores de posición -->
+      <div
+        class="carrusel-puntos"
+        role="tablist"
+        aria-label="Seleccionar imagen del carrusel"
+      >
         <button class="punto activo" role="tab" aria-selected="true"  aria-label="Ver imagen 1" data-indice="0"></button>
         <button class="punto"        role="tab" aria-selected="false" aria-label="Ver imagen 2" data-indice="1"></button>
         <button class="punto"        role="tab" aria-selected="false" aria-label="Ver imagen 3" data-indice="2"></button>
@@ -188,17 +216,26 @@
     </section>
 
     <!-- ════════════════════
-         CONTACTO
+         FORMULARIO CONTACTO
          ════════════════════ -->
-    <section class="contacto-seccion" id="contacto" aria-labelledby="titulo-contacto">
-      <h2 id="titulo-contacto">Hablar con Tribu</h2>
-      <p>Enviar mensaje. Tribu responder rápido. Fuego no esperar.</p>
+    <section
+      class="contacto-seccion"
+      id="contacto"
+      aria-labelledby="titulo-contacto"
+    >
+      <h2 id="titulo-contacto">Hablar con Maquinista</h2>
+      <p>Enviar mensaje. Tribu ferroviaria responder rápido. Raíl no esperar.</p>
 
-      <!-- Formulario: validación básica JS -->
-      <form class="formulario" id="formContacto" novalidate aria-label="Formulario de contacto">
-
+      <!-- Formulario con validación JS básica -->
+      <form
+        class="formulario"
+        id="formContacto"
+        novalidate
+        aria-label="Formulario de contacto ferroviario"
+      >
+        <!-- Campo nombre -->
         <div class="campo" id="campoNombre">
-          <label for="nombre">Nombre de guerrero</label>
+          <label for="nombre">Nombre del viajero</label>
           <input
             type="text"
             id="nombre"
@@ -210,8 +247,9 @@
           <span class="error" role="alert">Escribir nombre. Obligatorio.</span>
         </div>
 
+        <!-- Campo email -->
         <div class="campo" id="campoEmail">
-          <label for="email">Correo de humo</label>
+          <label for="email">Correo telegráfico</label>
           <input
             type="email"
             id="email"
@@ -220,66 +258,88 @@
             aria-required="true"
             autocomplete="email"
           >
-          <span class="error" role="alert">Correo no válido. Revisar.</span>
+          <span class="error" role="alert">Correo no válido. Revisar dirección.</span>
         </div>
 
+        <!-- Campo mensaje -->
         <div class="campo" id="campoMensaje">
-          <label for="mensaje">Mensaje en piedra</label>
+          <label for="mensaje">Mensaje en telégrafo</label>
           <textarea
             id="mensaje"
             name="mensaje"
-            placeholder="Escribir palabras aquí..."
+            placeholder="Escribir palabras sobre trenes aquí..."
             aria-required="true"
             rows="5"
           ></textarea>
-          <span class="error" role="alert">Escribenos un mensaje de cual es ti lista de mejores trenes...<span>
+          <span class="error" role="alert">Escribir mensaje. Mínimo 10 letras.</span>
         </div>
 
-        <button type="submit" class="btn-enviar">Enviar a tribu ➜</button>
-        <div class="form-exito" id="formExito" role="status" aria-live="polite">
-          🪨 Mensaje llegar. Tribu responder pronto.
+        <button type="submit" class="btn-enviar">
+          Enviar vagón de palabras ➜
+        </button>
+
+        <!-- Confirmación tras envío correcto -->
+        <div
+          class="form-exito"
+          id="formExito"
+          role="status"
+          aria-live="polite"
+        >
+          🚂 Mensaje enviado. Maquinista responder en próxima parada.
         </div>
       </form>
     </section>
 
   </main>
 
-  <!-- ════════════════════════════════
+  <!-- ════════════════════════════════════
        FOOTER
-       ════════════════════════════════ -->
+       ════════════════════════════════════ -->
   <footer class="footer" role="contentinfo">
     <div class="footer-interior">
 
-      <!-- Columna: Sobre nosotros + redes -->
+      <!-- Columna 1: descripción + redes sociales -->
       <div class="footer-about">
         <h3>Aficiorriarios</h3>
         <p>
-          Tribu digital para aficionados apasionados. Compartir colecciones. Conocer iguales. Vivir hobby sin límites. Comunidad activa desde montaña digital.
+          Tribu digital de amantes del ferrocarril. Compartir locomotoras y rutas. Conocer otros apasionados. Preservar historia del tren. Comunidad activa en todos los andenes del mundo.
         </p>
-        <!-- Redes sociales con SVG accesibles -->
-        <div class="redes" role="list" aria-label="Redes sociales">
+
+        <!-- Redes sociales: iconos SVG inline accesibles -->
+        <div class="redes" role="list" aria-label="Redes sociales de Aficiorriarios">
 
           <a href="#" class="red-link" role="listitem" aria-label="Seguir en Facebook">
-            <!-- Icono Facebook SVG inline -->
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+            </svg>
           </a>
 
           <a href="#" class="red-link" role="listitem" aria-label="Seguir en Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="var(--marrón)"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="var(--marrón)" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="var(--carbon)"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"
+                stroke="var(--carbon)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
           </a>
 
           <a href="#" class="red-link" role="listitem" aria-label="Seguir en X (Twitter)">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+            </svg>
           </a>
 
-          <a href="#" class="red-link" role="listitem" aria-label="Seguir en YouTube">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="var(--marrón)"/></svg>
+          <a href="#" class="red-link" role="listitem" aria-label="Ver canal de YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/>
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="var(--carbon)"/>
+            </svg>
           </a>
         </div>
       </div>
 
-      <!-- Columna: Links de navegación -->
-      <nav aria-label="Navegación del pie de página">
+      <!-- Columna 2: navegación del footer -->
+      <nav aria-label="Navegación pie de página">
         <h3>Explorar</h3>
         <ul class="footer-links" role="list">
           <li><a href="#inicio">Inicio</a></li>
@@ -291,7 +351,7 @@
         </ul>
       </nav>
 
-      <!-- Columna: Legales -->
+      <!-- Columna 3: avisos legales -->
       <div>
         <h3>Legal</h3>
         <ul class="footer-links" role="list">
@@ -306,17 +366,15 @@
 
     <!-- Copyright -->
     <div class="footer-copy">
-      <span>&copy; 2025 Aficiorriarios. Tribu no ceder derechos.</span>
+      <span>&copy; 2025 Aficiorriarios. Tribu ferroviaria no ceder derechos.</span>
       <span>
         <a href="#">Privacidad</a> · <a href="#">Términos</a> · <a href="#">Cookies</a>
       </span>
     </div>
   </footer>
 
-  <!-- ════════════════════════════════
-       JAVASCRIPT: Carrusel + Menú + Form
-       ════════════════════════════════ -->
-  <script src="funciones/script.js"></script>
+  <!-- Script separado: defer para no bloquear render -->
+  <script src="funciones/main.js" defer></script>
 
 </body>
 </html>
