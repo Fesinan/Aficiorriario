@@ -119,6 +119,145 @@ a {
   color: var(--blanco-vapor);
 }
 
+/* ── DROPDOWN GALERÍA (escritorio) ──────────── */
+.nav-links .dropdown {
+  position: relative;
+}
+
+/* Botón del dropdown: mismo aspecto que los <a> del nav */
+.dropbtn {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.9rem;
+  font-family: var(--fuente-display);
+  font-size: 0.93rem;
+  font-weight: 600;
+  color: var(--humo-claro);
+  background: none;
+  border: none;
+  border-radius: var(--radio);
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  transition: background var(--trans), color var(--trans);
+}
+
+.dropbtn:hover,
+.dropdown.abierto .dropbtn {
+  background: var(--acero);
+  color: var(--blanco-vapor);
+}
+
+/* Flecha rotatoria al abrir */
+.arrow {
+  font-size: 0.6rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.dropdown.abierto .arrow {
+  transform: rotate(180deg);
+}
+
+/* Panel desplegable */
+.dropdown-content {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 185px;
+  background: var(--carbon);
+  border: 1px solid var(--acero);
+  border-top: 3px solid var(--oxido);
+  border-radius: 0 0 var(--radio) var(--radio);
+  box-shadow: 0 8px 24px var(--sombra);
+  /* Oculto por defecto */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+  z-index: 200;
+}
+
+.dropdown.abierto .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.65rem 1.1rem;
+  font-family: var(--fuente-display);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--humo-claro);
+  border-left: 3px solid transparent;
+  transition: background var(--trans), color var(--trans), border-color var(--trans);
+}
+
+.dropdown-content a:hover,
+.dropdown-content a[aria-current="page"] {
+  background: var(--acero);
+  color: var(--blanco-vapor);
+  border-left-color: var(--oxido-claro);
+}
+
+/* ── SUBMENÚ GALERÍA EN MÓVIL ───────────────── */
+/* Botón que activa el submenú dentro de nav-movil */
+.nav-movil .btn-galeria-movil {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.7rem 1.75rem;
+  font-family: var(--fuente-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--humo-claro);
+  background: none;
+  border: none;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--trans), color var(--trans), border-color var(--trans);
+}
+
+.nav-movil .btn-galeria-movil:hover {
+  background: var(--acero);
+  color: var(--blanco-vapor);
+  border-left-color: var(--oxido-claro);
+}
+
+/* Panel del submenú móvil: oculto por defecto */
+.dropdown-movil {
+  display: none;
+  flex-direction: column;
+  background: rgba(255,255,255,0.04);
+  border-left: 3px solid var(--oxido);
+  margin: 0 1.75rem 0.25rem;
+}
+
+.dropdown-movil.abierto {
+  display: flex;
+}
+
+.dropdown-movil a {
+  display: block;
+  padding: 0.55rem 1rem;
+  font-family: var(--fuente-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--humo-claro);
+  transition: color var(--trans), background var(--trans);
+}
+
+.dropdown-movil a:hover,
+.dropdown-movil a[aria-current="page"] {
+  color: var(--blanco-vapor);
+  background: rgba(255,255,255,0.06);
+}
+
 /* Hamburguesa: oculto en escritorio */
 .btn-menu {
   display: none;
@@ -208,7 +347,7 @@ a {
       rgba(30,40,60,0.50) 60%,
       rgba(139,58,26,0.35) 100%
     ),
-    url('../imagenes/zurich_HB.webp') center / cover no-repeat;
+    url('img/zurich_HB.webp') center / cover no-repeat;
 }
 
 /* Patrón raíl decorativo encima del hero */

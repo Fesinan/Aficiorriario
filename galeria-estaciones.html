@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galería de estaciones ferroviarias: andenes, halls, combinaciones y entradas. Tribu Aficiorriarios.">
+  <meta name="keywords" content="estaciones, andenes, hall, ferrocarril, arquitectura ferroviaria, galería, aficiorriarios">
+  <meta name="author" content="Aficiorriarios Ferroviarios">
+  <meta property="og:title" content="Galería Estaciones — Aficiorriarios">
+  <meta property="og:description" content="Ver estaciones. Filtrar por zona. Tribu ferroviaria compartir imágenes.">
+  <meta property="og:type" content="website">
+  <title>Galería Estaciones — Aficiorriarios</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilos/style.css">
+  <link rel="stylesheet" href="estilos/galerias.css">
+</head>
+<body>
+
+  <!-- ════════════════════════════════════
+       CABECERA
+       ════════════════════════════════════ -->
+  <header class="cabecera" role="banner">
+    <div class="cab-interior">
+
+      <a href="index.html" class="logo" aria-label="Aficiorriarios Ferroviarios - Ir al inicio">
+        Aficior<span>riarios</span>
+      </a>
+
+      <nav class="nav-escritorio" aria-label="Navegación principal">
+        <ul class="nav-links" role="list">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="index.html#categorias">Categorías</a></li>
+
+          <!-- Dropdown Galería -->
+          <li>
+            <div class="dropdown">
+              <button
+                class="dropbtn"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="dropGaleria"
+              >
+                Galería
+                <span class="arrow" aria-hidden="true">▼</span>
+              </button>
+              <div class="dropdown-content" id="dropGaleria" role="menu">
+                <a href="galeria-trenes.html"     role="menuitem">Material Rodante</a>
+                <a href="galeria-estaciones.html" role="menuitem">Estaciones</a>
+                <a href="galeria-maquetas.html"   role="menuitem">Maquetas</a>
+                <a href="galeria-subir.html"       role="menuitem">Subir Imágen</a>
+              </div>
+            </div>
+          </li>
+
+
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button
+        class="btn-menu"
+        id="btnMenu"
+        aria-expanded="false"
+        aria-controls="navMovil"
+        aria-label="Abrir menú de navegación"
+      >
+        <span class="barra" aria-hidden="true"></span>
+        <span class="barra" aria-hidden="true"></span>
+        <span class="barra" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <nav class="nav-movil" id="navMovil" aria-label="Menú móvil" aria-hidden="true">
+      <a href="index.html#inicio"     tabindex="-1">Inicio</a>
+      <a href="index.html#categorias" tabindex="-1">Categorías</a>
+      <button
+        class="btn-galeria-movil"
+        id="btnGaleriaMovil"
+        aria-expanded="false"
+        aria-controls="submenuGaleriaMovil"
+        tabindex="-1"
+      >
+        Galería <span class="arrow" aria-hidden="true">▼</span>
+      </button>
+      <div class="dropdown-movil" id="submenuGaleriaMovil" role="group">
+        <a href="galeria-trenes.html"     tabindex="-1">Material Rodante</a>
+        <a href="galeria-estaciones.html" aria-current="page" tabindex="-1">Estaciones</a>
+        <a href="galeria-maquetas.html"   tabindex="-1">Maquetas</a>
+        <a href="galeria-subir.html"       tabindex="-1">Subir Imágen</a>
+      </div>
+      <a href="index.html#nosotros" tabindex="-1">Nosotros</a>
+      <a href="index.html#contacto" tabindex="-1">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- ════════════════════════════════════
+       HERO DE GALERÍA
+       ════════════════════════════════════ -->
+  <div class="galeria-hero" role="banner" aria-label="Encabezado galería estaciones">
+    <h1>Estaciones <em>del Mundo</em></h1>
+    <p>Piedra aguantar. Tiempo pasar. Tribu fotografiar templos del tren.</p>
+  </div>
+
+  <!-- ════════════════════════════════════
+       MAIN
+       ════════════════════════════════════ -->
+  <main id="contenido-principal">
+    <section class="galeria-pagina" aria-labelledby="titulo-galeria-estaciones">
+      <h2 id="titulo-galeria-estaciones" class="sr-only">Galería de estaciones ferroviarias</h2>
+
+      <!-- Filtros: Andenes · Hall · Combinaciones · Entradas -->
+      <div class="filtros" role="toolbar" aria-label="Filtrar imágenes por zona de la estación">
+        <span class="filtros-titulo" id="filtros-label">Filtrar:</span>
+        <button class="filtro-btn activo" data-filtro="todos"          aria-pressed="true"  aria-describedby="filtros-label">Todos</button>
+        <button class="filtro-btn"        data-filtro="andenes"        aria-pressed="false" aria-describedby="filtros-label">Andenes</button>
+        <button class="filtro-btn"        data-filtro="hall"           aria-pressed="false" aria-describedby="filtros-label">Hall</button>
+        <button class="filtro-btn"        data-filtro="combinaciones"  aria-pressed="false" aria-describedby="filtros-label">Combinaciones</button>
+        <button class="filtro-btn"        data-filtro="entradas"       aria-pressed="false" aria-describedby="filtros-label">Entradas</button>
+        <span class="galeria-contador" id="galeriaContador" aria-live="polite" aria-atomic="true"></span>
+      </div>
+
+      <!-- Grid de imágenes -->
+      <div class="galeria-grid" role="list" aria-label="Imágenes de estaciones ferroviarias">
+
+        <!-- Andenes: imágenes 1–4 -->
+        <div class="galeria-item" data-categoria="andenes" role="listitem">
+          <img src="img/galeria/estaciones/img-estaciones-1.webp" alt="Andén largo con cubierta de hierro forjado y rayos de luz entre vigas" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Luz entre vigas de hierro</p>
+            <p class="galeria-item-cat">Andenes</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="andenes" role="listitem">
+          <img src="img/galeria/estaciones/img-estaciones-2.webp" alt="Andén vacío al anochecer con tren esperando y farolas encendidas" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Andén al anochecer</p>
+            <p class="galeria-item-cat">Andenes</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="andenes" role="listitem">
+          <img src="img/galeria/estaciones/img-estaciones-3.webp" alt="Vista aérea de múltiples andenes paralelos con trenes en una gran terminal" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Terminal de múltiples vías</p>
+            <p class="galeria-item-cat">Andenes</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="andenes" role="listitem">
+          <img src="img/galeria/estaciones/img-estaciones-4.webp" alt="Panel de salidas y llegadas iluminado en andén con pasajeros esperando" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Panel de llegadas</p>
+            <p class="galeria-item-cat">Andenes</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <!-- Hall: imágenes 5–8 -->
+        <div class="galeria-item" data-categoria="hall" role="listitem">
+          <img src="img/galeria/estaciones/img-estaciones-5.webp" alt="Gran hall central de estación beaux-arts con cúpula de vidrio y viajeros" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Cúpula de cristal</p>
+            <p class="galeria-item-cat">Hall</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="hall" role="listitem">
+          <img src="img/galeria/estaciones/img-estaciones-6.webp" alt="Suelo de mármol pulido reflejando columnas y luz de hall histórico" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Mármol y columnas</p>
+            <p class="galeria-item-cat">Hall</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="hall" role="listitem">
+          <img src="img/galeria/estaciones/img-estaciones-7.webp" alt="Reloj central monumental colgado del techo de un gran hall ferroviario" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Reloj monumental</p>
+            <p class="galeria-item-cat">Hall</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="hall" role="listitem">
+          <img src="img/galeria/estaciones/img-estaciones-8.webp" alt="Hall moderno con luz natural cenital y viajeros en movimiento borroso" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Flujo de viajeros</p>
+            <p class="galeria-item-cat">Hall</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <!-- Combinaciones: imágenes 9–12 -->
+        <div class="galeria-item" data-categoria="combinaciones" role="listitem">
+          <img src="img/galeria/estaciones/img-estaciones-9.webp" alt="Pasillo de combinación entre líneas con señalética de colores y flechas" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Señalética de colores</p>
+            <p class="galeria-item-cat">Combinaciones</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="combinaciones" role="listitem">
+          <img src="img/galeria/estaciones/img-estaciones-10.webp" alt="Escaleras mecánicas de combinación entre metro y tren de cercanías" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Escaleras de combinación</p>
+            <p class="galeria-item-cat">Combinaciones</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="combinaciones" role="listitem">
+          <img src="img/galeria/estaciones/img-estaciones-11.webp" alt="Nudo de tres líneas convergentes visto desde pasarela superior" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Nudo de tres líneas</p>
+            <p class="galeria-item-cat">Combinaciones</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="combinaciones" role="listitem">
+          <img src="img/galeria/estaciones/img-estaciones-12.webp" alt="Torniquetes de acceso a combinación con mapa de red al fondo iluminado" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Acceso a la red</p>
+            <p class="galeria-item-cat">Combinaciones</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <!-- Entradas: imágenes 13–16 -->
+        <div class="galeria-item" data-categoria="entradas" role="listitem">
+          <img src="img/galeria/estaciones/img-estaciones-13.webp" alt="Fachada neoclásica de gran estación con arcos de piedra y escalinata" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Fachada neoclásica</p>
+            <p class="galeria-item-cat">Entradas</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="entradas" role="listitem">
+          <img src="img/galeria/estaciones/img-estaciones-14.webp" alt="Marquesina modernista de hierro y cristal sobre la entrada principal" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Marquesina modernista</p>
+            <p class="galeria-item-cat">Entradas</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="entradas" role="listitem">
+          <img src="img/galeria/estaciones/img-estaciones-15.webp" alt="Cartel luminoso con nombre de estación histórica sobre puerta principal" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Cartel luminoso nocturno</p>
+            <p class="galeria-item-cat">Entradas</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="entradas" role="listitem">
+          <img src="img/galeria/estaciones/img-estaciones-16.webp" alt="Entrada de estación abandonada con vegetación creciendo sobre las paredes" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Estación abandonada</p>
+            <p class="galeria-item-cat">Entradas</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+      </div>
+
+      <div class="galeria-vacia" id="galeriaMsgVacia" hidden role="status" aria-live="polite">
+        <span>🏛️</span>
+        Ninguna estación encontrar. Cambiar filtro. Buscar otra vez.
+      </div>
+    </section>
+  </main>
+
+  <!-- ════════════════════════════════════
+       LIGHTBOX
+       ════════════════════════════════════ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes" aria-hidden="true">
+    <div class="lightbox-contenedor">
+      <button class="lightbox-cerrar" id="lbCerrar" aria-label="Cerrar visor">&#10005;</button>
+      <img class="lightbox-img" id="lbImg" src="" alt="">
+      <button class="lightbox-nav lb-prev" id="lbPrev" aria-label="Imagen anterior">&#8592;</button>
+      <button class="lightbox-nav lb-next" id="lbNext" aria-label="Imagen siguiente">&#8594;</button>
+      <div class="lightbox-pie">
+        <p class="lightbox-titulo" id="lbTitulo"></p>
+        <p class="lightbox-meta"  id="lbMeta"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-interior">
+      <div class="footer-about">
+        <h3>Aficiorriarios</h3>
+        <p>Tribu digital de amantes del ferrocarril. Compartir locomotoras y rutas. Conocer otros apasionados. Preservar historia del tren. Comunidad activa en todos los andenes del mundo.</p>
+        <div class="redes" role="list" aria-label="Redes sociales de Aficiorriarios">
+          <a href="#" class="red-link" role="listitem" aria-label="Seguir en Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" class="red-link" role="listitem" aria-label="Seguir en Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="var(--carbon)"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="var(--carbon)" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+          <a href="#" class="red-link" role="listitem" aria-label="Seguir en X (Twitter)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </a>
+          <a href="#" class="red-link" role="listitem" aria-label="Ver canal de YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="var(--carbon)"/></svg>
+          </a>
+        </div>
+      </div>
+      <nav aria-label="Navegación pie de página">
+        <h3>Explorar</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="index.html#categorias">Categorías</a></li>
+          <li><a href="galeria-trenes.html">Galería</a></li>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+          <li><a href="mapa-sitio.html">Mapa del sitio</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h3>Legal</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Términos de uso</a></li>
+          <li><a href="#">Política de cookies</a></li>
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="#">Accesibilidad</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <span>&copy; 2025 Aficiorriarios. Tribu ferroviaria no ceder derechos.</span>
+      <span><a href="#">Privacidad</a> · <a href="#">Términos</a> · <a href="#">Cookies</a></span>
+    </div>
+  </footer>
+
+  <script src="funciones/main.js"     defer></script>
+  <script src="funciones/galerias.js" defer></script>
+
+</body>
+</html>

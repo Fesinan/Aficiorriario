@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galería de maquetas ferroviarias: estaciones, tramos y material rodante en miniatura. Tribu Aficiorriarios.">
+  <meta name="keywords" content="maquetas, ferroviario, H0, N, modelismo, trenes miniatura, galería, aficiorriarios">
+  <meta name="author" content="Aficiorriarios Ferroviarios">
+  <meta property="og:title" content="Galería Maquetas — Aficiorriarios">
+  <meta property="og:description" content="Ver maquetas. Filtrar por tipo. Tribu construir mundo en miniatura.">
+  <meta property="og:type" content="website">
+  <title>Galería Maquetas — Aficiorriarios</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilos/style.css">
+  <link rel="stylesheet" href="estilos/galerias.css">
+</head>
+<body>
+
+  <!-- ════════════════════════════════════
+       CABECERA
+       ════════════════════════════════════ -->
+  <header class="cabecera" role="banner">
+    <div class="cab-interior">
+
+      <a href="index.html" class="logo" aria-label="Aficiorriarios Ferroviarios - Ir al inicio">
+        Aficior<span>riarios</span>
+      </a>
+
+      <nav class="nav-escritorio" aria-label="Navegación principal">
+        <ul class="nav-links" role="list">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="index.html#categorias">Categorías</a></li>
+
+          <!-- Dropdown Galería (bloque indicado en el enunciado) -->
+          <li>
+            <section class="dropdown" aria-label="Submenú galería">
+              <button
+                class="dropbtn"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="dropGaleria"
+              >
+                Galería
+                <span class="arrow" aria-hidden="true">▼</span>
+              </button>
+              <section class="dropdown-content" id="dropGaleria" role="menu">
+                <a href="galeria-trenes.html"    role="menuitem" aria-current="page">Material Rodante</a>
+                <a href="galeria-estaciones.html" role="menuitem">Estaciones</a>
+                <a href="galeria-maquetas.html"   role="menuitem">Maquetas</a>
+                <a href="galeria-subir.html"       role="menuitem">Subir Imágen</a>
+              </section>
+            </section>
+          </li>
+
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button
+        class="btn-menu"
+        id="btnMenu"
+        aria-expanded="false"
+        aria-controls="navMovil"
+        aria-label="Abrir menú de navegación"
+      >
+        <span class="barra" aria-hidden="true"></span>
+        <span class="barra" aria-hidden="true"></span>
+        <span class="barra" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <nav class="nav-movil" id="navMovil" aria-label="Menú móvil" aria-hidden="true">
+      <a href="index.html#inicio"     tabindex="-1">Inicio</a>
+      <a href="index.html#categorias" tabindex="-1">Categorías</a>
+      <button
+        class="btn-galeria-movil"
+        id="btnGaleriaMovil"
+        aria-expanded="false"
+        aria-controls="submenuGaleriaMovil"
+        tabindex="-1"
+      >
+        Galería <span class="arrow" aria-hidden="true">▼</span>
+      </button>
+      <div class="dropdown-movil" id="submenuGaleriaMovil" role="group">
+        <a href="galeria-trenes.html"     tabindex="-1">Material Rodante</a>
+        <a href="galeria-estaciones.html" tabindex="-1">Estaciones</a>
+        <a href="galeria-maquetas.html"   aria-current="page" tabindex="-1">Maquetas</a>
+        <a href="galeria-subir.html"       tabindex="-1">Subir Imágen</a>
+      </div>
+      <a href="index.html#nosotros" tabindex="-1">Nosotros</a>
+      <a href="index.html#contacto" tabindex="-1">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- ════════════════════════════════════
+       HERO DE GALERÍA
+       ════════════════════════════════════ -->
+  <div class="galeria-hero" role="banner" aria-label="Encabezado galería maquetas">
+    <h1>Maquetas <em>de la Tribu</em></h1>
+    <p>Mano construir. Pincel detallar. Tribu crear mundo ferroviario en miniatura.</p>
+  </div>
+
+  <!-- ════════════════════════════════════
+       MAIN
+       ════════════════════════════════════ -->
+  <main id="contenido-principal">
+    <section class="galeria-pagina" aria-labelledby="titulo-galeria-maquetas">
+      <h2 id="titulo-galeria-maquetas" class="sr-only">Galería de maquetas ferroviarias</h2>
+
+      <!-- Filtros: Estaciones · Tramos · Material Rodante -->
+      <div class="filtros" role="toolbar" aria-label="Filtrar maquetas por tipo">
+        <span class="filtros-titulo" id="filtros-label">Filtrar:</span>
+        <button class="filtro-btn activo" data-filtro="todos"              aria-pressed="true"  aria-describedby="filtros-label">Todos</button>
+        <button class="filtro-btn"        data-filtro="estaciones"         aria-pressed="false" aria-describedby="filtros-label">Estaciones</button>
+        <button class="filtro-btn"        data-filtro="tramos"             aria-pressed="false" aria-describedby="filtros-label">Tramos</button>
+        <button class="filtro-btn"        data-filtro="material-rodante"   aria-pressed="false" aria-describedby="filtros-label">Material Rodante</button>
+        <span class="galeria-contador" id="galeriaContador" aria-live="polite" aria-atomic="true"></span>
+      </div>
+
+      <!-- Grid de imágenes -->
+      <div class="galeria-grid" role="list" aria-label="Imágenes de maquetas ferroviarias">
+
+        <!-- Estaciones: imágenes 1–4 -->
+        <div class="galeria-item" data-categoria="estaciones" role="listitem">
+          <img src="img/galeria/maquetas/img-maquetas-1.webp" alt="Maqueta de estación victoriana en escala H0 con viajeros pintados a mano" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Estación victoriana H0</p>
+            <p class="galeria-item-cat">Estaciones</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="estaciones" role="listitem">
+          <img src="img/galeria/maquetas/img-maquetas-2.webp" alt="Marquesina de andén en miniatura con iluminación LED interior encendida" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Marquesina con LED</p>
+            <p class="galeria-item-cat">Estaciones</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="estaciones" role="listitem">
+          <img src="img/galeria/maquetas/img-maquetas-3.webp" alt="Depósito de locomotoras en maqueta escala N con grúa giratoria y fosos" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Depósito de locomotoras N</p>
+            <p class="galeria-item-cat">Estaciones</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="estaciones" role="listitem">
+          <img src="img/galeria/maquetas/img-maquetas-4.webp" alt="Cabina de señalización antigua con palancas y tablero pintado en maqueta" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Cabina de señales</p>
+            <p class="galeria-item-cat">Estaciones</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <!-- Tramos: imágenes 5–8 -->
+        <div class="galeria-item" data-categoria="tramos" role="listitem">
+          <img src="img/galeria/maquetas/img-maquetas-5.webp" alt="Tramo de vía en maqueta con curva en montaña y túnel excavado en escayola" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Curva en montaña</p>
+            <p class="galeria-item-cat">Tramos</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="tramos" role="listitem">
+          <img src="img/galeria/maquetas/img-maquetas-6.webp" alt="Viaducto de arcos en piedra construido en maqueta con detalle de mampostería" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Viaducto de arcos</p>
+            <p class="galeria-item-cat">Tramos</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="tramos" role="listitem">
+          <img src="img/galeria/maquetas/img-maquetas-7.webp" alt="Paso a nivel con barreras abatibles y señal luminosa en miniatura funcional" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Paso a nivel funcional</p>
+            <p class="galeria-item-cat">Tramos</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="tramos" role="listitem">
+          <img src="img/galeria/maquetas/img-maquetas-8.webp" alt="Paisaje invernal en maqueta con nieve artificial capa de polvo blanco" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Paisaje invernal</p>
+            <p class="galeria-item-cat">Tramos</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <!-- Material Rodante: imágenes 9–12 -->
+        <div class="galeria-item" data-categoria="material-rodante" role="listitem">
+          <img src="img/galeria/maquetas/img-maquetas-9.webp" alt="Locomotora de vapor en escala H0 con detalle de biela y chimenea pintados" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Locomotora vapor H0</p>
+            <p class="galeria-item-cat">Material Rodante</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="material-rodante" role="listitem">
+          <img src="img/galeria/maquetas/img-maquetas-10.webp" alt="Vagón cisterna de mercancías en escala N con letras pintadas y óxido simulado" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Vagón cisterna N</p>
+            <p class="galeria-item-cat">Material Rodante</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="material-rodante" role="listitem">
+          <img src="img/galeria/maquetas/img-maquetas-11.webp" alt="Automotor diésel vintage en escala H0 con interior iluminado y pasajeros" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Automotor diésel vintage</p>
+            <p class="galeria-item-cat">Material Rodante</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="material-rodante" role="listitem">
+          <img src="img/galeria/maquetas/img-maquetas-12.webp" alt="Convoy completo de carga en maqueta con locomotora eléctrica y ocho vagones" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Convoy de carga completo</p>
+            <p class="galeria-item-cat">Material Rodante</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+      </div>
+
+      <div class="galeria-vacia" id="galeriaMsgVacia" hidden role="status" aria-live="polite">
+        <span>🔧</span>
+        Ninguna maqueta encontrar. Cambiar filtro. Buscar otra vez.
+      </div>
+    </section>
+  </main>
+
+  <!-- ════════════════════════════════════
+       LIGHTBOX
+       ════════════════════════════════════ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes" aria-hidden="true">
+    <div class="lightbox-contenedor">
+      <button class="lightbox-cerrar" id="lbCerrar" aria-label="Cerrar visor">&#10005;</button>
+      <img class="lightbox-img" id="lbImg" src="" alt="">
+      <button class="lightbox-nav lb-prev" id="lbPrev" aria-label="Imagen anterior">&#8592;</button>
+      <button class="lightbox-nav lb-next" id="lbNext" aria-label="Imagen siguiente">&#8594;</button>
+      <div class="lightbox-pie">
+        <p class="lightbox-titulo" id="lbTitulo"></p>
+        <p class="lightbox-meta"  id="lbMeta"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-interior">
+      <div class="footer-about">
+        <h3>Aficiorriarios</h3>
+        <p>Tribu digital de amantes del ferrocarril. Compartir locomotoras y rutas. Conocer otros apasionados. Preservar historia del tren. Comunidad activa en todos los andenes del mundo.</p>
+        <div class="redes" role="list" aria-label="Redes sociales de Aficiorriarios">
+          <a href="#" class="red-link" role="listitem" aria-label="Seguir en Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" class="red-link" role="listitem" aria-label="Seguir en Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="var(--carbon)"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="var(--carbon)" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+          <a href="#" class="red-link" role="listitem" aria-label="Seguir en X (Twitter)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </a>
+          <a href="#" class="red-link" role="listitem" aria-label="Ver canal de YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="var(--carbon)"/></svg>
+          </a>
+        </div>
+      </div>
+      <nav aria-label="Navegación pie de página">
+        <h3>Explorar</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="index.html#categorias">Categorías</a></li>
+          <li><a href="galeria-trenes.html">Galería</a></li>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+          <li><a href="mapa-sitio.html">Mapa del sitio</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h3>Legal</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Términos de uso</a></li>
+          <li><a href="#">Política de cookies</a></li>
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="#">Accesibilidad</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <span>&copy; 2025 Aficiorriarios. Tribu ferroviaria no ceder derechos.</span>
+      <span><a href="#">Privacidad</a> · <a href="#">Términos</a> · <a href="#">Cookies</a></span>
+    </div>
+  </footer>
+
+  <script src="funciones/galerias.js"     defer></script>
+  <script src="funciones/galerias.js" defer></script>
+
+</body>
+</html>

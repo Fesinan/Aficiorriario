@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════
    main.js — Aficiorriarios Ferroviarios
-   Módulos: menú móvil · carrusel · formulario
+   Módulos: dropdown · menú móvil · carrusel · formulario
    ═══════════════════════════════════════════ */
 'use strict';
 
@@ -8,12 +8,81 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ────────────────────────────────────────────
-     MÓDULO 1: MENÚ HAMBURGUESA
+     MÓDULO 1: DROPDOWN GALERÍA (escritorio)
+     Abrir/cerrar con clic. Cerrar con Escape
+     y al hacer clic fuera. Teclado accesible.
+     ──────────────────────────────────────────── */
+  const dropdowns = document.querySelectorAll('.nav-links .dropdown');
+
+  dropdowns.forEach(dd => {
+    const btn     = dd.querySelector('.dropbtn');
+    const content = dd.querySelector('.dropdown-content');
+    if (!btn || !content) return;
+
+    // Clic en botón: abrir/cerrar este dropdown
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const estaAbierto = dd.classList.contains('abierto');
+      cerrarTodosDropdowns();
+      if (!estaAbierto) {
+        dd.classList.add('abierto');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    // Navegación por teclado dentro del panel
+    content.addEventListener('keydown', e => {
+      const links = [...content.querySelectorAll('a')];
+      const idx   = links.indexOf(document.activeElement);
+      if (e.key === 'ArrowDown') { e.preventDefault(); links[Math.min(idx + 1, links.length - 1)]?.focus(); }
+      if (e.key === 'ArrowUp')   { e.preventDefault(); links[Math.max(idx - 1, 0)]?.focus(); }
+      if (e.key === 'Escape')    { cerrarTodosDropdowns(); btn.focus(); }
+    });
+  });
+
+  // Cerrar todos los dropdowns al hacer clic fuera
+  document.addEventListener('click', cerrarTodosDropdowns);
+
+  // Cerrar con Escape desde cualquier parte de la página
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') cerrarTodosDropdowns();
+  });
+
+  function cerrarTodosDropdowns() {
+    dropdowns.forEach(dd => {
+      dd.classList.remove('abierto');
+      dd.querySelector('.dropbtn')?.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  /* ────────────────────────────────────────────
+     MÓDULO 2: SUBMENÚ GALERÍA EN MÓVIL
+     Desplegable independiente dentro de nav-movil
+     ──────────────────────────────────────────── */
+  const btnGaleriaMovil  = document.getElementById('btnGaleriaMovil');
+  const submenuGaleria   = document.getElementById('submenuGaleriaMovil');
+
+  if (btnGaleriaMovil && submenuGaleria) {
+    btnGaleriaMovil.addEventListener('click', () => {
+      const estaAbierto = submenuGaleria.classList.contains('abierto');
+      submenuGaleria.classList.toggle('abierto', !estaAbierto);
+      btnGaleriaMovil.setAttribute('aria-expanded', String(!estaAbierto));
+      // Rotar flecha del botón
+      const flecha = btnGaleriaMovil.querySelector('.arrow');
+      if (flecha) flecha.style.transform = estaAbierto ? '' : 'rotate(180deg)';
+    });
+  }
+
+  /* ────────────────────────────────────────────
+     MÓDULO 3: MENÚ HAMBURGUESA
      Controlar apertura/cierre suave en móvil
      ──────────────────────────────────────────── */
   const btnMenu    = document.getElementById('btnMenu');
   const navMovil   = document.getElementById('navMovil');
-  const linksMovil = navMovil ? navMovil.querySelectorAll('a') : [];
+  // Seleccionar solo <a> directos, excluir el btn-galeria-movil y el submenu
+  const linksMovil = navMovil
+    ? [...navMovil.querySelectorAll('a'), btnGaleriaMovil].filter(Boolean)
+    : [];
 
   if (btnMenu && navMovil) {
 
@@ -25,13 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
       navMovil.classList.toggle('abierto');
 
       // Activar/desactivar tabindex: accesibilidad teclado
-      linksMovil.forEach(a =>
-        a.setAttribute('tabindex', estaAbierto ? '-1' : '0')
+      linksMovil.forEach(el =>
+        el.setAttribute('tabindex', estaAbierto ? '-1' : '0')
       );
     });
 
-    // Cerrar menú al navegar por link
-    linksMovil.forEach(a => {
+    // Cerrar menú al navegar por link (solo <a>)
+    navMovil.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', cerrarMenu);
     });
 
@@ -54,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ────────────────────────────────────────────
-     MÓDULO 2: CARRUSEL AUTOMÁTICO
+     MÓDULO 4: CARRUSEL AUTOMÁTICO
      Avanzar cada INTERVALO ms. Transición suave.
      ──────────────────────────────────────────── */
   const pista   = document.getElementById('carruselPista');
@@ -123,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ────────────────────────────────────────────
-     MÓDULO 3: VALIDACIÓN FORMULARIO
+     MÓDULO 5: VALIDACIÓN FORMULARIO
      Verificar campos antes de enviar
      ──────────────────────────────────────────── */
   const form         = document.getElementById('formContacto');

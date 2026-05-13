@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galería de material rodante ferroviario: sub-urbanos, metros, alta velocidad y tranvías. Tribu Aficiorriarios.">
+  <meta name="keywords" content="trenes, material rodante, metro, alta velocidad, tranvía, sub-urbano, ferrocarril, galería">
+  <meta name="author" content="Aficiorriarios Ferroviarios">
+  <meta property="og:title" content="Galería Material Rodante — Aficiorriarios">
+  <meta property="og:description" content="Ver trenes. Filtrar por tipo. Tribu ferroviaria compartir imágenes.">
+  <meta property="og:type" content="website">
+  <title>Galería Material Rodante — Aficiorriarios</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- CSS principal del sitio -->
+  <link rel="stylesheet" href="estilos/style.css">
+  <!-- CSS específico de galerías -->
+  <link rel="stylesheet" href="estilos/galerias.css">
+</head>
+<body>
+
+  <!-- ════════════════════════════════════
+       CABECERA: igual que index.html
+       con menú Galería convertido a dropdown
+       ════════════════════════════════════ -->
+  <header class="cabecera" role="banner">
+    <div class="cab-interior">
+
+      <a href="index.html" class="logo" aria-label="Aficiorriarios Ferroviarios - Ir al inicio">
+        Aficior<span>riarios</span>
+      </a>
+
+      <!-- Nav escritorio con dropdown en Galería -->
+      <nav class="nav-escritorio" aria-label="Navegación principal">
+        <ul class="nav-links" role="list">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="index.html#categorias">Categorías</a></li>
+
+          <li>
+            <section class="dropdown" aria-label="Submenú galería">
+              <button
+                class="dropbtn"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="dropGaleria"
+              >
+                Galería
+                <span class="arrow" aria-hidden="true">▼</span>
+              </button>
+              <section class="dropdown-content" id="dropGaleria" role="menu">
+                <a href="galeria-trenes.html"     role="menuitem">Material Rodante</a>
+                <a href="galeria-estaciones.html" role="menuitem" aria-current="page">Estaciones</a>
+                <a href="galeria-maquetas.html"   role="menuitem">Maquetas</a>
+                <a href="galeria-subir.html"       role="menuitem">Subir Imágen</a>
+              </section>
+            </section>
+          </li>
+
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hamburguesa móvil -->
+      <button
+        class="btn-menu"
+        id="btnMenu"
+        aria-expanded="false"
+        aria-controls="navMovil"
+        aria-label="Abrir menú de navegación"
+      >
+        <span class="barra" aria-hidden="true"></span>
+        <span class="barra" aria-hidden="true"></span>
+        <span class="barra" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <!-- Menú móvil: incluye submenú galería -->
+    <nav class="nav-movil" id="navMovil" aria-label="Menú móvil" aria-hidden="true">
+      <a href="index.html#inicio"      tabindex="-1">Inicio</a>
+      <a href="index.html#categorias"  tabindex="-1">Categorías</a>
+
+      <!-- Botón submenú galería en móvil -->
+      <button
+        class="btn-galeria-movil"
+        id="btnGaleriaMovil"
+        aria-expanded="false"
+        aria-controls="submenuGaleriaMovil"
+        tabindex="-1"
+      >
+        Galería <span class="arrow" aria-hidden="true">▼</span>
+      </button>
+      <div class="dropdown-movil" id="submenuGaleriaMovil" role="group">
+        <a href="galeria-trenes.html"     aria-current="page" tabindex="-1">Material Rodante</a>
+        <a href="galeria-estaciones.html" tabindex="-1">Estaciones</a>
+        <a href="galeria-maquetas.html"   tabindex="-1">Maquetas</a>
+        <a href="galeria-subir.html"       tabindex="-1">Subir Imágen</a>
+      </div>
+
+      <a href="index.html#nosotros" tabindex="-1">Nosotros</a>
+      <a href="index.html#contacto" tabindex="-1">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- ════════════════════════════════════
+       HERO DE GALERÍA
+       ════════════════════════════════════ -->
+  <div class="galeria-hero" role="banner" aria-label="Encabezado galería material rodante">
+    <h1>Material <em>Rodante</em></h1>
+    <p>Rueda girar. Raíl cantar. Tribu fotografiar trenes del mundo.</p>
+  </div>
+
+  <!-- ════════════════════════════════════
+       MAIN: galería con filtros
+       ════════════════════════════════════ -->
+  <main id="contenido-principal">
+    <section class="galeria-pagina" aria-labelledby="titulo-galeria-trenes">
+      <h2 id="titulo-galeria-trenes" class="sr-only">Galería de material rodante ferroviario</h2>
+
+      <!-- Barra de filtros -->
+      <div class="filtros" role="toolbar" aria-label="Filtrar imágenes por categoría">
+        <span class="filtros-titulo" id="filtros-label">Filtrar:</span>
+        <button class="filtro-btn activo" data-filtro="todos"         aria-pressed="true"  aria-describedby="filtros-label">Todos</button>
+        <button class="filtro-btn"        data-filtro="sub-urbanos"   aria-pressed="false" aria-describedby="filtros-label">Sub-urbanos</button>
+        <button class="filtro-btn"        data-filtro="metros"        aria-pressed="false" aria-describedby="filtros-label">Metros</button>
+        <button class="filtro-btn"        data-filtro="alta-velocidad" aria-pressed="false" aria-describedby="filtros-label">Alta Velocidad</button>
+        <button class="filtro-btn"        data-filtro="tranvias"      aria-pressed="false" aria-describedby="filtros-label">Tranvías</button>
+        <span class="galeria-contador" id="galeriaContador" aria-live="polite" aria-atomic="true"></span>
+      </div>
+
+      <!-- Grid de imágenes -->
+      <!-- data-categoria: slug del filtro al que pertenece cada imagen -->
+      <div class="galeria-grid" role="list" aria-label="Imágenes de material rodante">
+
+        <!-- Sub-urbanos: imágenes 1–4 -->
+        <div class="galeria-item" data-categoria="sub-urbanos" role="listitem">
+          <img src="img/galeria/trenes/img-trenes-1.webp" alt="Tren sub-urbano eléctrico en estación cubierta al amanecer" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Sub-urbano en andén</p>
+            <p class="galeria-item-cat">Sub-urbanos</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="sub-urbanos" role="listitem">
+          <img src="img/galeria/trenes/img-trenes-2.webp" alt="Convoy sub-urbano cruzando puente de hierro sobre río" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Cruzar puente de hierro</p>
+            <p class="galeria-item-cat">Sub-urbanos</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="sub-urbanos" role="listitem">
+          <img src="img/galeria/trenes/img-trenes-3.webp" alt="Interior de vagón sub-urbano moderno con asientos vacíos" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Interior del vagón</p>
+            <p class="galeria-item-cat">Sub-urbanos</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="sub-urbanos" role="listitem">
+          <img src="img/galeria/trenes/img-trenes-4.webp" alt="Sub-urbano saliendo del túnel con luz de día al fondo" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Salir del túnel</p>
+            <p class="galeria-item-cat">Sub-urbanos</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <!-- Metros: imágenes 5–8 -->
+        <div class="galeria-item" data-categoria="metros" role="listitem">
+          <img src="img/galeria/trenes/img-trenes-5.webp" alt="Metro urbano en curva subterránea con iluminación artificial" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Metro en curva</p>
+            <p class="galeria-item-cat">Metros</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="metros" role="listitem">
+          <img src="img/galeria/trenes/img-trenes-6.webp" alt="Andén de metro con puertas de cristal y tren esperando" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Andén con puertas</p>
+            <p class="galeria-item-cat">Metros</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="metros" role="listitem">
+          <img src="img/galeria/trenes/img-trenes-7.webp" alt="Metro antiguo de los años sesenta en museo ferroviario" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Metro histórico</p>
+            <p class="galeria-item-cat">Metros</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="metros" role="listitem">
+          <img src="img/galeria/trenes/img-trenes-8.webp" alt="Dos líneas de metro cruzándose en nudo de intercambio subterráneo" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Nudo de intercambio</p>
+            <p class="galeria-item-cat">Metros</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <!-- Alta Velocidad: imágenes 9–12 -->
+        <div class="galeria-item" data-categoria="alta-velocidad" role="listitem">
+          <img src="img/galeria/trenes/img-trenes-9.webp" alt="Tren de alta velocidad blanco cruzando viaducto en paisaje montañoso" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">AVE en viaducto</p>
+            <p class="galeria-item-cat">Alta Velocidad</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="alta-velocidad" role="listitem">
+          <img src="img/galeria/trenes/img-trenes-10.webp" alt="Morro aerodinámico de tren bala japonés Shinkansen en estación" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Morro del Shinkansen</p>
+            <p class="galeria-item-cat">Alta Velocidad</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="alta-velocidad" role="listitem">
+          <img src="img/galeria/trenes/img-trenes-11.webp" alt="Interior de vagón de alta velocidad con asientos reclinables en clase business" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Cabina clase business</p>
+            <p class="galeria-item-cat">Alta Velocidad</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="alta-velocidad" role="listitem">
+          <img src="img/galeria/trenes/img-trenes-12.webp" alt="Tren de alta velocidad lanzado a plena velocidad borrando el paisaje" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Velocidad: borrar mundo</p>
+            <p class="galeria-item-cat">Alta Velocidad</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <!-- Tranvías: imágenes 13–16 -->
+        <div class="galeria-item" data-categoria="tranvias" role="listitem">
+          <img src="img/galeria/trenes/img-trenes-13.webp" alt="Tranvía histórico de madera recorriendo calle empedrada del centro histórico" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Tranvía histórico</p>
+            <p class="galeria-item-cat">Tranvías</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="tranvias" role="listitem">
+          <img src="img/galeria/trenes/img-trenes-14.webp" alt="Tranvía moderno de piso bajo cruzando avenida con carriles exclusivos" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Tranvía moderno</p>
+            <p class="galeria-item-cat">Tranvías</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="tranvias" role="listitem">
+          <img src="img/galeria/trenes/img-trenes-15.webp" alt="Detalle del pantógrafo de un tranvía captando electricidad del cableado aéreo" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Pantógrafo: tocar cielo</p>
+            <p class="galeria-item-cat">Tranvías</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+
+        <div class="galeria-item" data-categoria="tranvias" role="listitem">
+          <img src="img/galeria/trenes/img-trenes-16.webp" alt="Tranvía de cable en San Francisco subiendo calle empinada entre edificios" loading="lazy">
+          <div class="galeria-item-overlay">
+            <p class="galeria-item-titulo">Cable car: subir montaña</p>
+            <p class="galeria-item-cat">Tranvías</p>
+          </div>
+          <div class="galeria-item-lupa" aria-hidden="true">🔍</div>
+        </div>
+      </div>
+
+      <!-- Mensaje sin resultados (oculto por defecto) -->
+      <div class="galeria-vacia" id="galeriaMsgVacia" hidden role="status" aria-live="polite">
+        <span>🚂</span>
+        Ningún tren encontrar. Cambiar filtro. Buscar otra vez.
+      </div>
+    </section>
+  </main>
+
+  <!-- ════════════════════════════════════
+       LIGHTBOX
+       ════════════════════════════════════ -->
+  <div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Visor de imágenes"
+    aria-hidden="true"
+  >
+    <div class="lightbox-contenedor">
+      <!-- Cerrar -->
+      <button class="lightbox-cerrar" id="lbCerrar" aria-label="Cerrar visor">&#10005;</button>
+
+      <!-- Imagen principal -->
+      <img class="lightbox-img" id="lbImg" src="" alt="">
+
+      <!-- Navegación -->
+      <button class="lightbox-nav lb-prev" id="lbPrev" aria-label="Imagen anterior">&#8592;</button>
+      <button class="lightbox-nav lb-next" id="lbNext" aria-label="Imagen siguiente">&#8594;</button>
+
+      <!-- Pie: título + metadatos -->
+      <div class="lightbox-pie">
+        <p class="lightbox-titulo" id="lbTitulo"></p>
+        <p class="lightbox-meta"  id="lbMeta"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       FOOTER: igual que index.html
+       ════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-interior">
+
+      <div class="footer-about">
+        <h3>Aficiorriarios</h3>
+        <p>
+          Tribu digital de amantes del ferrocarril. Compartir locomotoras y rutas. Conocer otros apasionados. Preservar historia del tren. Comunidad activa en todos los andenes del mundo.
+        </p>
+        <div class="redes" role="list" aria-label="Redes sociales de Aficiorriarios">
+          <a href="#" class="red-link" role="listitem" aria-label="Seguir en Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" class="red-link" role="listitem" aria-label="Seguir en Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="var(--carbon)"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="var(--carbon)" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+          <a href="#" class="red-link" role="listitem" aria-label="Seguir en X (Twitter)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </a>
+          <a href="#" class="red-link" role="listitem" aria-label="Ver canal de YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="var(--carbon)"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav aria-label="Navegación pie de página">
+        <h3>Explorar</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="index.html#categorias">Categorías</a></li>
+          <li><a href="galeria-trenes.html">Galería</a></li>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+          <li><a href="mapa-sitio.html">Mapa del sitio</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h3>Legal</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Términos de uso</a></li>
+          <li><a href="#">Política de cookies</a></li>
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="#">Accesibilidad</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-copy">
+      <span>&copy; 2025 Aficiorriarios. Tribu ferroviaria no ceder derechos.</span>
+      <span><a href="#">Privacidad</a> · <a href="#">Términos</a> · <a href="#">Cookies</a></span>
+    </div>
+  </footer>
+
+  <!-- JS sitio principal + JS galerías -->
+  <script src="funciones/galerias.js"     defer></script>
+  <script src="funciones/galerias.js" defer></script>
+
+</body>
+</html>

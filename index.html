@@ -39,8 +39,28 @@
         <ul class="nav-links" role="list">
           <li><a href="index.html"      aria-current="page">Inicio</a></li>
           <li><a href="categorias.html">Categorías</a></li>
+          <!-- Dropdown Galería -->
+          <li>
+            <div class="dropdown">
+              <button
+                class="dropbtn"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="dropGaleria"
+              >
+                Galería
+                <span class="arrow" aria-hidden="true">▼</span>
+              </button>
+              <div class="dropdown-content" id="dropGaleria" role="menu">
+                <a href="galeria-trenes.html"     role="menuitem">Material Rodante</a>
+                <a href="galeria-estaciones.html" role="menuitem">Estaciones</a>
+                <a href="galeria-maquetas.html"   role="menuitem">Maquetas</a>
+                <a href="galeria-subir.html"       role="menuitem">Subir Imágen</a>
+              </div>
+            </div>
+          </li>
+
           <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="galeria.html">Galería</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </nav>
@@ -144,7 +164,7 @@
       id="galeria"
       aria-labelledby="titulo-galeria"
     >
-      <h2 id="titulo-galeria">Galería Ferroviaria</h2>
+      <h2 id="titulo-galeria">Algunas Imágenes. Poder Aportar</h2>
 
       <!-- Carrusel accesible -->
       <div
