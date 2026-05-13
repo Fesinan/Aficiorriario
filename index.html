@@ -39,6 +39,7 @@
         <ul class="nav-links" role="list">
           <li><a href="index.html"      aria-current="page">Inicio</a></li>
           <li><a href="categorias.html">Categorías</a></li>
+
           <!-- Dropdown Galería -->
           <li>
             <div class="dropdown">
@@ -88,7 +89,25 @@
     >
       <a href="index.html"      tabindex="-1">Inicio</a>
       <a href="categorias.html"  tabindex="-1">Categorías</a>
-      <a href="galeria.html"     tabindex="-1">Galería</a>
+          <!-- Dropdown Galería -->
+        
+      <button
+        class="btn-galeria-movil"
+        id="btnGaleriaMovil"
+        aria-expanded="false"
+        aria-controls="submenuGaleriaMovil"
+        tabindex="-1"
+      >
+        Galería <span class="arrow" aria-hidden="true">▼</span>
+      </button>
+      <div class="dropdown-movil" id="submenuGaleriaMovil" role="group">
+        <a href="galeria-trenes.html"     tabindex="-1">Material Rodante</a>
+        <a href="galeria-estaciones.html" aria-current="page" tabindex="-1">Estaciones</a>
+        <a href="galeria-maquetas.html"   tabindex="-1">Maquetas</a>
+        <a href="galeria-subir.html"       tabindex="-1">Subir Imágen</a>
+      </div>
+
+
       <a href="nosotros.html"    tabindex="-1">Nosotros</a>
       <a href="contacto.html"    tabindex="-1">Contacto</a>
     </nav>

@@ -1,78 +1,13 @@
 /* ═══════════════════════════════════════════════
    galerias.js — Lógica compartida de galerías
-   Módulos: dropdown · filtros · lightbox
+   Módulos:  filtros · lightbox
    ═══════════════════════════════════════════════ */
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // /* ──────────────────────────────────────────────
-  //    MÓDULO 1: DROPDOWN "GALERÍA" EN CABECERA
-  //    Escritorio: hover+clic. Móvil: submenú.
-  //    ────────────────────────────────────────────── */
-
-  // /* --- Escritorio --- */
-  // const dropdowns = document.querySelectorAll('.nav-links .dropdown');
-
-  // dropdowns.forEach(dd => {
-  //   const btn     = dd.querySelector('.dropbtn');
-  //   const content = dd.querySelector('.dropdown-content');
-  //   if (!btn || !content) return;
-
-  //   // Abrir/cerrar al hacer clic en el botón
-  //   btn.addEventListener('click', e => {
-  //     e.stopPropagation();
-  //     const abierto = dd.classList.contains('abierto');
-  //     cerrarTodosDropdowns();
-  //     if (!abierto) {
-  //       dd.classList.add('abierto');
-  //       btn.setAttribute('aria-expanded', 'true');
-  //     }
-  //   });
-
-  //   // Navegación por teclado dentro del dropdown
-  //   content.addEventListener('keydown', e => {
-  //     const links = [...content.querySelectorAll('a')];
-  //     const idx   = links.indexOf(document.activeElement);
-  //     if (e.key === 'ArrowDown') { e.preventDefault(); links[Math.min(idx+1, links.length-1)]?.focus(); }
-  //     if (e.key === 'ArrowUp')   { e.preventDefault(); links[Math.max(idx-1, 0)]?.focus(); }
-  //     if (e.key === 'Escape')    { cerrarTodosDropdowns(); btn.focus(); }
-  //   });
-  // });
-
-  // // Cerrar al hacer clic fuera
-  // document.addEventListener('click', cerrarTodosDropdowns);
-
-  // // Cerrar con Escape desde cualquier lugar
-  // document.addEventListener('keydown', e => {
-  //   if (e.key === 'Escape') cerrarTodosDropdowns();
-  // });
-
-  // function cerrarTodosDropdowns() {
-  //   dropdowns.forEach(dd => {
-  //     dd.classList.remove('abierto');
-  //     dd.querySelector('.dropbtn')?.setAttribute('aria-expanded', 'false');
-  //   });
-  // }
-
-  // /* --- Móvil: submenú galería desplegable --- */
-  // const btnGaleriaMovil = document.getElementById('btnGaleriaMovil');
-  // const submenuMovil    = document.getElementById('submenuGaleriaMovil');
-
-  // if (btnGaleriaMovil && submenuMovil) {
-  //   btnGaleriaMovil.addEventListener('click', () => {
-  //     const abierto = submenuMovil.classList.contains('abierto');
-  //     submenuMovil.classList.toggle('abierto', !abierto);
-  //     btnGaleriaMovil.setAttribute('aria-expanded', String(!abierto));
-  //     // Rotar flecha del botón
-  //     const flecha = btnGaleriaMovil.querySelector('.arrow');
-  //     if (flecha) flecha.style.transform = abierto ? '' : 'rotate(180deg)';
-  //   });
-  // }
-
-
   /* ──────────────────────────────────────────────
-     MÓDULO 2: FILTRADO DE GALERÍA
+     MÓDULO 1: FILTRADO DE GALERÍA
      Leer data-categoria de cada item y filtrar.
      ────────────────────────────────────────────── */
   const filtrosBtns = document.querySelectorAll('.filtro-btn');
@@ -131,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ──────────────────────────────────────────────
-     MÓDULO 3: LIGHTBOX
+     MÓDULO 2: LIGHTBOX
      Abrir imagen al clic. Navegar por filtro activo.
      ────────────────────────────────────────────── */
   const lightbox      = document.getElementById('lightbox');
