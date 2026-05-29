@@ -1,0 +1,610 @@
+/* ═══════════════════════════════════════════════
+   contacto.css — Página de contacto Aficiorriarios
+   Complementa style.css (variables, reset, header,
+   footer ya definidos allí).
+   ═══════════════════════════════════════════════ */
+
+/* ── HERO DE CONTACTO ───────────────────────── */
+.contacto-hero {
+  background: var(--carbon);
+  border-bottom: 3px solid var(--oxido);
+  padding: 3.5rem 1.5rem 3rem;
+  text-align: center;
+  /* Textura sutil: líneas de raíl en el fondo */
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 58px,
+    rgba(255, 255, 255, 0.015) 58px,
+    rgba(255, 255, 255, 0.015) 60px
+  );
+}
+
+.contacto-hero h1 {
+  font-family: var(--fuente-display);
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 700;
+  color: var(--blanco-vapor);
+  text-shadow: 1px 3px 12px rgba(0, 0, 0, 0.55);
+  margin-bottom: 0.65rem;
+  line-height: 1.15;
+}
+
+.contacto-hero h1 em {
+  font-style: normal;
+  color: var(--oxido-claro);
+}
+
+.contacto-hero p {
+  font-size: 1rem;
+  color: var(--humo-claro);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* ── LAYOUT PRINCIPAL: dos columnas ─────────── */
+/* Columna izquierda: info + decoración
+   Columna derecha:   formulario              */
+.contacto-layout {
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.55fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* ── COLUMNA IZQUIERDA: información ─────────── */
+.contacto-info {
+  position: sticky;
+  top: 90px; /* debajo de la cabecera fija */
+}
+
+.contacto-info-titulo {
+  font-family: var(--fuente-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--oxido-claro);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+}
+
+.contacto-info h2 {
+  font-family: var(--fuente-display);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--acero);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid var(--oxido-claro);
+}
+
+.contacto-info p {
+  font-size: 0.97rem;
+  color: var(--humo);
+  line-height: 1.85;
+  margin-bottom: 0.7rem;
+}
+
+/* Tarjetas de canales de contacto */
+.contacto-canales {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.canal-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--blanco-vapor);
+  border: 1px solid var(--crema-oscura);
+  border-left: 4px solid var(--oxido);
+  border-radius: var(--radio);
+  transition: border-color var(--trans), box-shadow var(--trans), transform 0.2s;
+}
+
+.canal-item:hover {
+  border-left-color: var(--oxido-claro);
+  box-shadow: 0 4px 14px var(--sombra);
+  transform: translateX(3px);
+}
+
+.canal-icono {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  width: 36px;
+  text-align: center;
+}
+
+.canal-texto strong {
+  display: block;
+  font-family: var(--fuente-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--acero);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 0.15rem;
+}
+
+.canal-texto span {
+  font-size: 0.9rem;
+  color: var(--humo);
+}
+
+/* Separador decorativo tipo durmiente de vía */
+.separador-via {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 2.2rem 0 1.5rem;
+}
+
+.separador-via::before,
+.separador-via::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--crema-oscura) 0px,
+    var(--crema-oscura) 12px,
+    transparent 12px,
+    transparent 18px
+  );
+}
+
+.separador-via span {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* ── COLUMNA DERECHA: FORMULARIO ────────────── */
+.contacto-formulario-wrapper {
+  background: var(--blanco-vapor);
+  border: 1px solid var(--crema-oscura);
+  border-top: 4px solid var(--oxido);
+  border-radius: var(--radio);
+  padding: 2.5rem 2rem;
+  box-shadow: 0 6px 28px var(--sombra);
+}
+
+/* Cabecera del formulario */
+.form-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--crema-oscura);
+}
+
+.form-header h3 {
+  font-family: var(--fuente-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--acero);
+  margin-bottom: 0.3rem;
+}
+
+.form-header p {
+  font-size: 0.9rem;
+  color: var(--humo);
+}
+
+/* Formulario */
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+/* Fila de dos campos lado a lado */
+.form-fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem;
+}
+
+/* Campo genérico */
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  font-family: var(--fuente-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--acero);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+/* Asterisco de campo requerido */
+.campo label .req {
+  color: var(--oxido);
+  margin-left: 2px;
+  font-size: 0.9rem;
+}
+
+/* Inputs y textarea */
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 0.72rem 1rem;
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.97rem;
+  color: var(--texto);
+  background: white;
+  border: 2px solid var(--crema-oscura);
+  border-radius: var(--radio);
+  transition: border-color var(--trans), box-shadow var(--trans);
+  line-height: 1.5;
+  appearance: none;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+  color: var(--humo-claro);
+  font-style: italic;
+  font-size: 0.93rem;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  border-color: var(--acero-claro);
+  box-shadow: 0 0 0 3px rgba(92, 122, 154, 0.18);
+  outline: none;
+}
+
+/* Textarea con altura mínima */
+.campo textarea {
+  resize: vertical;
+  min-height: 138px;
+}
+
+/* ── ESTADOS DE VALIDACIÓN ───────────────────── */
+
+/* Campo válido (tras interacción) */
+.campo.valido input,
+.campo.valido textarea {
+  border-color: #4A9A6A;
+}
+
+.campo.valido input:focus,
+.campo.valido textarea:focus {
+  box-shadow: 0 0 0 3px rgba(74, 154, 106, 0.18);
+}
+
+/* Campo inválido */
+.campo.invalido input,
+.campo.invalido textarea {
+  border-color: var(--oxido);
+  background: rgba(139, 58, 26, 0.04);
+}
+
+.campo.invalido input:focus,
+.campo.invalido textarea:focus {
+  box-shadow: 0 0 0 3px rgba(139, 58, 26, 0.18);
+}
+
+/* Mensaje de error (oculto por defecto) */
+.campo .error-msg {
+  display: none;
+  font-family: var(--fuente-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--oxido);
+  margin-top: 0.38rem;
+}
+
+.campo .error-msg::before {
+  content: '⚠ ';
+}
+
+.campo.invalido .error-msg {
+  display: block;
+}
+
+/* Icono de validación dentro del input (via wrapper) */
+.campo-input-wrap {
+  position: relative;
+}
+
+.campo-input-wrap .estado-icono {
+  position: absolute;
+  right: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.95rem;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.campo.valido   .estado-icono { opacity: 1; content: '✓'; color: #4A9A6A; }
+.campo.invalido .estado-icono { opacity: 1; content: '✗'; color: var(--oxido); }
+
+/* Añadir padding-right al input cuando hay icono */
+.campo-input-wrap input {
+  padding-right: 2.5rem;
+}
+
+/* ── CONTADOR DE CARACTERES ──────────────────── */
+.campo-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.3rem;
+}
+
+.char-count {
+  font-family: var(--fuente-display);
+  font-size: 0.75rem;
+  color: var(--humo-claro);
+  transition: color var(--trans);
+}
+
+.char-count.advertencia { color: var(--oxido-claro); }
+.char-count.limite      { color: var(--oxido); font-weight: 700; }
+
+/* ── SELECTOR DE ASUNTO PREDEFINIDO ──────────── */
+.asunto-sugerencias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.asunto-chip {
+  padding: 0.25rem 0.75rem;
+  font-family: var(--fuente-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--acero);
+  background: var(--crema);
+  border: 1.5px solid var(--crema-oscura);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background var(--trans), color var(--trans),
+              border-color var(--trans), transform 0.15s;
+}
+
+.asunto-chip:hover {
+  background: var(--acero);
+  color: var(--blanco-vapor);
+  border-color: var(--acero);
+  transform: translateY(-1px);
+}
+
+.asunto-chip:active {
+  transform: translateY(0);
+}
+
+/* ── BOTÓN ENVIAR ────────────────────────────── */
+.form-acciones {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.btn-enviar {
+  padding: 0.8rem 2.2rem;
+  background: var(--oxido);
+  color: var(--blanco-vapor);
+  font-family: var(--fuente-display);
+  font-size: 1rem;
+  font-weight: 700;
+  border: 2px solid var(--oxido);
+  border-radius: var(--radio);
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background var(--trans), border-color var(--trans),
+              transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-enviar:hover {
+  background: var(--oxido-claro);
+  border-color: var(--oxido-claro);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(139, 58, 26, 0.35);
+}
+
+.btn-enviar:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Estado de carga del botón */
+.btn-enviar.enviando {
+  opacity: 0.75;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn-enviar .spinner {
+  display: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.35);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: girar 0.7s linear infinite;
+}
+
+.btn-enviar.enviando .spinner { display: inline-block; }
+.btn-enviar.enviando .btn-texto { display: none; }
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+/* Nota de privacidad junto al botón */
+.privacidad-nota {
+  font-size: 0.8rem;
+  color: var(--humo-claro);
+}
+
+.privacidad-nota a {
+  color: var(--acero-claro);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.privacidad-nota a:hover { color: var(--acero); }
+
+/* ── MENSAJE DE ÉXITO ────────────────────────── */
+.form-exito {
+  display: none;
+  padding: 1.25rem 1.5rem;
+  background: #DFF2E8;
+  border: 2px solid #4A9A6A;
+  border-left: 5px solid #4A9A6A;
+  border-radius: var(--radio);
+  margin-top: 1rem;
+}
+
+.form-exito.visible {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  animation: deslizarEntrar 0.4s ease both;
+}
+
+@keyframes deslizarEntrar {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.form-exito .exito-icono {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.form-exito .exito-texto strong {
+  display: block;
+  font-family: var(--fuente-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2A6A4A;
+  margin-bottom: 0.2rem;
+}
+
+.form-exito .exito-texto span {
+  font-size: 0.88rem;
+  color: #3A7A5A;
+}
+
+/* ── SECCIÓN FAQ RÁPIDA ──────────────────────── */
+.contacto-faq {
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: 0 1.5rem 5rem;
+}
+
+.contacto-faq h2 {
+  font-family: var(--fuente-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--acero);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--crema-oscura);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.1rem;
+}
+
+.faq-item {
+  padding: 1.1rem 1.25rem;
+  background: var(--blanco-vapor);
+  border: 1px solid var(--crema-oscura);
+  border-left: 4px solid var(--acero-claro);
+  border-radius: var(--radio);
+}
+
+.faq-item dt {
+  font-family: var(--fuente-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--acero);
+  margin-bottom: 0.5rem;
+}
+
+.faq-item dd {
+  font-size: 0.9rem;
+  color: var(--humo);
+  line-height: 1.7;
+  margin-left: 0;
+}
+
+/* ── RESPONSIVE ──────────────────────────────── */
+
+/* Tablet ≤ 899px: apilar columnas */
+@media (max-width: 899px) {
+  .contacto-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+
+  .contacto-info {
+    position: static; /* quitar sticky en móvil */
+  }
+
+  /* Canales en fila horizontal */
+  .contacto-canales {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .canal-item {
+    flex: 1 1 200px;
+  }
+}
+
+/* Tablet ≤ 639px: fila de campos apilada */
+@media (max-width: 639px) {
+  .form-fila {
+    grid-template-columns: 1fr;
+  }
+
+  .contacto-formulario-wrapper {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .form-acciones {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-enviar {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Móvil pequeño ≤ 479px */
+@media (max-width: 479px) {
+  .contacto-hero h1 { font-size: 1.6rem; }
+  .faq-grid { grid-template-columns: 1fr; }
+}
+
+/* Escritorio grande ≥ 1301px */
+@media (min-width: 1301px) {
+  .contacto-layout { gap: 5rem; padding-top: 5rem; }
+  .contacto-info h2 { font-size: 1.75rem; }
+}
