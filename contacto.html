@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacta con Aficiorriarios: escribe a la tribu ferroviaria, comparte ideas o pide información. Respuesta por riel garantizada.">
+  <meta name="keywords" content="contacto, aficiorriarios, ferroviario, comunidad, escribir, tribu, tren">
+  <meta name="author" content="Aficiorriarios Ferroviarios">
+  <meta property="og:title" content="Contacto — Aficiorriarios">
+  <meta property="og:description" content="Escribe carta a tribu. Por riel contestar. Comunidad ferroviaria responder.">
+  <meta property="og:type" content="website">
+  <title>Contacto — Aficiorriarios</title>
+
+  <!-- Google Fonts: mismas que el resto del sitio -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- CSS global del sitio -->
+  <link rel="stylesheet" href="estilos/style.css">
+  <!-- CSS específico de esta página -->
+  <link rel="stylesheet" href="estilos/contacto.css">
+</head>
+<body>
+
+  <!-- ════════════════════════════════════
+       CABECERA — igual que el resto del sitio
+       ════════════════════════════════════ -->
+  <header class="cabecera" role="banner">
+    <div class="cab-interior">
+
+      <a href="index.html" class="logo" aria-label="Aficiorriarios Ferroviarios - Ir al inicio">
+        Aficior<span>riarios</span>
+      </a>
+
+      <!-- Navegación escritorio -->
+      <nav class="nav-escritorio" aria-label="Navegación principal">
+        <ul class="nav-links" role="list">
+          <li><a href="index.html#inicio">Inicio</a></li>
+
+          <!-- Dropdown Galería -->
+          <li>
+            <div class="dropdown">
+              <button
+                class="dropbtn"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="dropGaleria"
+              >
+                Galería
+                <span class="arrow" aria-hidden="true">▼</span>
+              </button>
+              <div class="dropdown-content" id="dropGaleria" role="menu">
+                <a href="galeria-trenes.html"     role="menuitem">Material Rodante</a>
+                <a href="galeria-estaciones.html" role="menuitem">Estaciones</a>
+                <a href="galeria-maquetas.html"   role="menuitem">Maquetas</a>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <a href="contacto.html" aria-current="page">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Botón hamburguesa (móvil) -->
+      <button
+        class="btn-menu"
+        id="btnMenu"
+        aria-expanded="false"
+        aria-controls="navMovil"
+        aria-label="Abrir menú de navegación"
+      >
+        <span class="barra" aria-hidden="true"></span>
+        <span class="barra" aria-hidden="true"></span>
+        <span class="barra" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <!-- Menú móvil -->
+    <nav class="nav-movil" id="navMovil" aria-label="Menú móvil" aria-hidden="true">
+      <a href="index.html#inicio"     tabindex="-1">Inicio</a>
+      <a href="index.html#categorias" tabindex="-1">Categorías</a>
+
+      <button
+        class="btn-galeria-movil"
+        id="btnGaleriaMovil"
+        aria-expanded="false"
+        aria-controls="submenuGaleriaMovil"
+        tabindex="-1"
+      >
+        Galería <span class="arrow" aria-hidden="true">▼</span>
+      </button>
+      <div class="dropdown-movil" id="submenuGaleriaMovil" role="group">
+        <a href="galeria-trenes.html"     tabindex="-1">Material Rodante</a>
+        <a href="galeria-estaciones.html" tabindex="-1">Estaciones</a>
+        <a href="galeria-maquetas.html"   tabindex="-1">Maquetas</a>
+        <a href="galeria-subir.html"       tabindex="-1">Subir Imágen</a>
+      </div>
+
+      <a href="index.html#nosotros" tabindex="-1">Nosotros</a>
+      <a href="contacto.html" aria-current="page" tabindex="-1">Contacto</a>
+    </nav>
+  </header>
+
+
+  <!-- ════════════════════════════════════
+       HERO DE LA PÁGINA
+       ════════════════════════════════════ -->
+  <div class="contacto-hero" role="banner" aria-label="Encabezado página de contacto">
+    <h1>Tribu carta <em>recibir</em>. Por riel <em>contestar</em>.</h1>
+    <p>Escribir mensaje. Tribu leer cada palabra. Respuesta llegar pronto como tren express.</p>
+  </div>
+
+
+  <!-- ════════════════════════════════════
+       MAIN
+       ════════════════════════════════════ -->
+  <main id="contenido-principal">
+
+    <!-- ── Layout de dos columnas: info + formulario ── -->
+    <div class="contacto-layout">
+
+      <!-- ── Columna izquierda: información ── -->
+      <aside class="contacto-info" aria-label="Información de contacto">
+
+        <p class="contacto-info-titulo" aria-hidden="true">★ Aficiorriarios</p>
+
+        <h2>Hablar con la tribu</h2>
+
+        <p>
+          Cada mensaje importar. Cada pregunta tener respuesta. Tribu ferroviaria nunca dejar vagón sin pasajero.
+        </p>
+        <p>
+          Enviar duda sobre galería, propuesta de colaboración, aviso de error o simplemente compartir pasión ferroviaria. Todo bienvenido en estos andenes digitales.
+        </p>
+
+        <!-- Separador decorativo tipo vía férrea -->
+        <div class="separador-via" aria-hidden="true">
+          <span>🚂</span>
+        </div>
+
+        <!-- Tarjetas de canales de contacto -->
+        <div class="contacto-canales" role="list" aria-label="Canales de contacto disponibles">
+
+          <div class="canal-item" role="listitem">
+            <span class="canal-icono" aria-hidden="true">📧</span>
+            <div class="canal-texto">
+              <strong>Email</strong>
+              <span>tribu@aficiorriarios.com</span>
+            </div>
+          </div>
+
+          <div class="canal-item" role="listitem">
+            <span class="canal-icono" aria-hidden="true">💬</span>
+            <div class="canal-texto">
+              <strong>Redes sociales</strong>
+              <span>@Aficiorriarios en todas</span>
+            </div>
+          </div>
+
+          <div class="canal-item" role="listitem">
+            <span class="canal-icono" aria-hidden="true">⏱️</span>
+            <div class="canal-texto">
+              <strong>Tiempo de respuesta</strong>
+              <span>Máximo 48 horas hábiles</span>
+            </div>
+          </div>
+
+          <div class="canal-item" role="listitem">
+            <span class="canal-icono" aria-hidden="true">🗺️</span>
+            <div class="canal-texto">
+              <strong>Idiomas</strong>
+              <span>Español, Inglés, Portugués</span>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+
+      <!-- ── Columna derecha: formulario ── -->
+      <section aria-labelledby="titulo-formulario">
+
+        <div class="contacto-formulario-wrapper">
+
+          <!-- Cabecera del formulario -->
+          <div class="form-header">
+            <h3 id="titulo-formulario">Enviar mensaje</h3>
+            <p>Campos marcados con <span aria-label="asterisco, obligatorio">*</span> son obligatorios.</p>
+          </div>
+
+          <!-- Formulario principal -->
+          <form
+            class="contacto-form"
+            id="formContacto"
+            novalidate
+            aria-label="Formulario de contacto"
+          >
+
+            <!-- Fila 1: Nombre + Email -->
+            <div class="form-fila">
+
+              <!-- Campo: Nombre -->
+              <div class="campo" id="campo-nombre">
+                <label for="nombre">
+                  Nombre <span class="req" aria-label="obligatorio">*</span>
+                </label>
+                <div class="campo-input-wrap">
+                  <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    autocomplete="given-name"
+                    placeholder="Tu nombre"
+                    required
+                    minlength="2"
+                    maxlength="80"
+                    aria-required="true"
+                    aria-describedby="error-nombre"
+                  >
+                  <span class="estado-icono" aria-hidden="true"></span>
+                </div>
+                <span class="error-msg" id="error-nombre" role="alert" aria-live="polite">
+                  Mínimo 2 caracteres
+                </span>
+              </div>
+
+              <!-- Campo: Email -->
+              <div class="campo" id="campo-email">
+                <label for="email">
+                  Email <span class="req" aria-label="obligatorio">*</span>
+                </label>
+                <div class="campo-input-wrap">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    placeholder="ejemplo@sitio.com"
+                    required
+                    maxlength="120"
+                    aria-required="true"
+                    aria-describedby="error-email"
+                  >
+                  <span class="estado-icono" aria-hidden="true"></span>
+                </div>
+                <span class="error-msg" id="error-email" role="alert" aria-live="polite">
+                  Formato inválido: ejemplo@sitio.com
+                </span>
+              </div>
+
+            </div>
+            <!-- fin form-fila -->
+
+
+            <!-- Campo: Asunto -->
+            <div class="campo" id="campo-asunto">
+              <label for="asunto">
+                Asunto <span class="req" aria-label="obligatorio">*</span>
+              </label>
+
+              <!-- Chips de asunto predefinido -->
+              <div
+                class="asunto-sugerencias"
+                role="group"
+                aria-label="Sugerencias de asunto"
+              >
+                <button
+                  type="button"
+                  class="asunto-chip"
+                  aria-label="Usar asunto: Consulta sobre la galería"
+                >Consulta galería</button>
+
+                <button
+                  type="button"
+                  class="asunto-chip"
+                  aria-label="Usar asunto: Propuesta de colaboración"
+                >Colaboración</button>
+
+                <button
+                  type="button"
+                  class="asunto-chip"
+                  aria-label="Usar asunto: Reportar un problema técnico"
+                >Problema técnico</button>
+
+                <button
+                  type="button"
+                  class="asunto-chip"
+                  aria-label="Usar asunto: Quiero unirme a la tribu"
+                >Unirme a la tribu</button>
+
+                <button
+                  type="button"
+                  class="asunto-chip"
+                  aria-label="Usar asunto: Otro motivo"
+                >Otro</button>
+              </div>
+
+              <div class="campo-input-wrap">
+                <input
+                  type="text"
+                  id="asunto"
+                  name="asunto"
+                  placeholder="Escribe o elige un asunto arriba"
+                  required
+                  minlength="3"
+                  maxlength="120"
+                  aria-required="true"
+                  aria-describedby="error-asunto"
+                >
+                <span class="estado-icono" aria-hidden="true"></span>
+              </div>
+              <span class="error-msg" id="error-asunto" role="alert" aria-live="polite">
+                Indica el asunto del mensaje
+              </span>
+            </div>
+
+
+            <!-- Campo: Mensaje -->
+            <div class="campo" id="campo-mensaje">
+              <label for="mensaje">
+                Mensaje <span class="req" aria-label="obligatorio">*</span>
+              </label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                placeholder="Escribe aquí tu mensaje. Tribu leer con atención…"
+                required
+                minlength="15"
+                maxlength="1200"
+                rows="6"
+                aria-required="true"
+                aria-describedby="error-mensaje char-count-desc"
+              ></textarea>
+              <div class="campo-footer">
+                <!-- Contador accesible: anunciado solo como descripción, no como alerta -->
+                <span
+                  class="char-count"
+                  id="charCount"
+                  aria-label="Caracteres utilizados"
+                  role="status"
+                  aria-live="off"
+                >0 / 1200</span>
+              </div>
+              <!-- Descripción accesible del contador para lectores de pantalla -->
+              <span id="char-count-desc" class="sr-only">
+                Máximo 1200 caracteres permitidos
+              </span>
+              <span class="error-msg" id="error-mensaje" role="alert" aria-live="polite">
+                El mensaje debe tener al menos 15 caracteres
+              </span>
+            </div>
+
+
+            <!-- Acciones: botón enviar + nota privacidad -->
+            <div class="form-acciones">
+              <button
+                type="submit"
+                class="btn-enviar"
+                id="btnEnviar"
+                aria-label="Enviar mensaje"
+              >
+                <span class="spinner" aria-hidden="true"></span>
+                <span class="btn-texto">Enviar mensaje →</span>
+              </button>
+
+              <p class="privacidad-nota">
+                Al enviar, aceptas nuestra
+                <a href="#" aria-label="Ver política de privacidad">política de privacidad</a>.
+              </p>
+            </div>
+
+          </form>
+          <!-- fin form -->
+
+          <!-- Mensaje de éxito (oculto hasta que se envíe) -->
+          <div
+            class="form-exito"
+            id="formExito"
+            role="status"
+            aria-live="polite"
+            aria-hidden="true"
+          >
+            <span class="exito-icono" aria-hidden="true">✅</span>
+            <div class="exito-texto">
+              <strong>¡Mensaje enviado con éxito!</strong>
+              <span>Tribu recibir carta. Respuesta llegar pronto como tren express. Gracias por escribir.</span>
+            </div>
+          </div>
+
+        </div>
+        <!-- fin contacto-formulario-wrapper -->
+
+      </section>
+
+    </div>
+    <!-- fin contacto-layout -->
+
+
+    <!-- ── FAQ rápida ── -->
+    <section class="contacto-faq" aria-labelledby="titulo-faq">
+      <h2 id="titulo-faq">Preguntas frecuentes</h2>
+
+      <dl class="faq-grid">
+
+        <div class="faq-item">
+          <dt>¿Cuánto tiempo tardáis en responder?</dt>
+          <dd>Tribu responder en menos de 48 horas hábiles. Mensajes urgentes recibir prioridad si indicar en asunto.</dd>
+        </div>
+
+        <div class="faq-item">
+          <dt>¿Puedo subir fotos propias a la galería?</dt>
+          <dd>Sí. Usar sección "Subir Imágen" del menú Galería. Fotos revisadas por moderadores antes de publicar.</dd>
+        </div>
+
+        <div class="faq-item">
+          <dt>¿Cómo colaborar con Aficiorriarios?</dt>
+          <dd>Escribir con asunto "Colaboración". Tribu leer propuesta y contactar si encajar con proyecto ferroviario.</dd>
+        </div>
+
+        <div class="faq-item">
+          <dt>¿Tenéis comunidad en redes sociales?</dt>
+          <dd>Sí. Encontrar tribu en Facebook, Instagram, X y YouTube bajo nombre @Aficiorriarios en todas las plataformas.</dd>
+        </div>
+
+      </dl>
+    </section>
+
+  </main>
+  <!-- fin main -->
+
+
+  <!-- ════════════════════════════════════
+       FOOTER — igual que el resto del sitio
+       ════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-interior">
+
+      <div class="footer-about">
+        <h3>Aficiorriarios</h3>
+        <p>Tribu digital de amantes del ferrocarril. Compartir locomotoras y rutas. Conocer otros apasionados. Preservar historia del tren. Comunidad activa en todos los andenes del mundo.</p>
+
+        <div class="redes" role="list" aria-label="Redes sociales de Aficiorriarios">
+          <a href="#" class="red-link" role="listitem" aria-label="Seguir en Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" class="red-link" role="listitem" aria-label="Seguir en Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="var(--carbon)"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="var(--carbon)" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+          <a href="#" class="red-link" role="listitem" aria-label="Seguir en X (Twitter)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </a>
+          <a href="#" class="red-link" role="listitem" aria-label="Ver canal de YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="var(--carbon)"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav aria-label="Navegación pie de página">
+        <h3>Explorar</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="galeria-trenes.html">Galería</a></li>
+          <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h3>Legal</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="mapa-sitio.html">Mapa del sitio</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Términos de uso</a></li>
+          <li><a href="#">Política de cookies</a></li>
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="#">Accesibilidad</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-copy">
+      <span>&copy; 2025 Aficiorriarios. Tribu ferroviaria no ceder derechos.</span>
+      <span><a href="#">Privacidad</a> · <a href="#">Términos</a> · <a href="#">Cookies</a></span>
+    </div>
+  </footer>
+
+
+  <!-- ── Scripts ── -->
+  <!-- JS global del sitio (dropdown, menú hamburguesa, carrusel) -->
+  <script src="funciones/main.js" defer></script>
+  <!-- JS específico de esta página (validación, chips, contador) -->
+  <script src="funciones/contacto.js" defer></script>
+
+</body>
+</html>
