@@ -347,7 +347,7 @@ a {
       rgba(30,40,60,0.50) 60%,
       rgba(139,58,26,0.35) 100%
     ),
-    url('/img/zurich_HB.webp') center / cover no-repeat;
+    url('../img/zurich_HB.webp') center / cover no-repeat;
 }
 
 /* Patrón raíl decorativo encima del hero */
